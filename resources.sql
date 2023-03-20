@@ -18,3 +18,4 @@ CREATE OR REPLACE FUNCTION COMBINE(a STRING, b STRING)
   RUNTIME_VERSION = '11'
   IMPORTS = ('@artifacts/&artifact_name')
   HANDLER = 'org.example.udf.Function.combineStrings';
+
