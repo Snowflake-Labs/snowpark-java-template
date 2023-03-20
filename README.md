@@ -2,8 +2,6 @@
 
 Use this template to start writing data applications on Snowflake using Scala.
 
-## Overview
-
 ## Setup
 
 Set the following environment variables with your Snowflake account information:
