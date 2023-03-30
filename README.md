@@ -1,6 +1,6 @@
 # Java Project Template for Snowpark
 
-Use this template to start writing data applications on Snowflake using Scala.
+Use this template to start writing data applications on Snowflake using Java.
 
 ## Setup
 
