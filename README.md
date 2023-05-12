@@ -38,14 +38,13 @@ To develop your applications locally, you will need
 
 ## Usage
 
-
 Once you've set your credentials, you can test your connection by running the `run()` command in [`App.java`](src/main/java/org/example/procedure/App.java). You can run this method directly from your IDE.
 
 You should see the following output in your terminal:
 
 ```log
 ---------------------------------------------------
-|"Hello world"                                    |
+|"HELLO_WORLD"                                    |
 ---------------------------------------------------
 |Welcome to Snowflake!                            |
 |Learn more: https://www.snowflake.com/snowpark/  |

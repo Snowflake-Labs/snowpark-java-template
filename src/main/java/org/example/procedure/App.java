@@ -14,7 +14,7 @@ public class App {
      * @param session A Snowflake Session
      * @return The count of the DataFrame
      */
-    public static Long run(Session session) {
+    public static DataFrame run(Session session) {
 
         DataFrame df = session.createDataFrame(
             new Row[]{
@@ -22,8 +22,8 @@ public class App {
                 Row.create("Learn more: ", "https://www.snowflake.com/snowpark/")
             },
             StructType.create(
-                new StructField("Hello", DataTypes.StringType),
-                new StructField("World", DataTypes.StringType))
+                new StructField("hello", DataTypes.StringType),
+                new StructField("world", DataTypes.StringType))
         );
 
         UserDefinedFunction combine = session.udf().registerTemporary(
@@ -33,13 +33,11 @@ public class App {
 
         DataFrame df2 = df.select(
             combine.apply(
-                Functions.col("Hello"),
-                Functions.col("World")).as("Hello world")
-            ).sort(Functions.col("Hello world").desc());
+                Functions.col("hello"),
+                Functions.col("world")).as("hello_world")
+            ).sort(Functions.col("hello_world").desc());
 
-        df2.show();
-
-        return df.count();
+        return df2;
     }
 
     /**
@@ -49,6 +47,8 @@ public class App {
     public static void main(String[] args) {
         Session session = LocalSession.getSession();
 
-        App.run(session);
+        DataFrame result = App.run(session);
+
+        result.show();
     }
 }

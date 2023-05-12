@@ -1,0 +1,7 @@
+{
+    "files.watcherExclude": {
+        "**/target": true
+    },
+    "java.configuration.updateBuildConfiguration": "automatic",
+    // Add recommended plugins
+}

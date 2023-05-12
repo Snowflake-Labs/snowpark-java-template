@@ -22,7 +22,7 @@
     <dependency>
       <groupId>com.snowflake</groupId>
       <artifactId>snowpark</artifactId>
-      <version>1.7.0</version>
+      <version>1.8.0</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -31,7 +31,50 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
   <build>
+    <plugins>
+      <plugin>
+        <groupId>com.snowflake</groupId>
+        <artifactId>snowflake-maven-plugin</artifactId>
+        <version>0.1.0</version>
+        <configuration>
+          <auth>
+              <url>https://pm.snowflakecomputing.com:443</url>
+              <user>jasonfreeberg</user>
+              <password>${env.SNOWFLAKE_PASSWORD}</password> <!-- Env var injection for secrets -->
+              <!-- optional auth configuration -->  
+              <role>accountadmin</role>
+              <db>jasonfreeberg</db>
+              <schema>public</schema>
+          </auth>
+          <stage>STAGE_NAME</stage>
+          <functions>
+              <function>
+                  <name>combineStrings</name>
+                  <handler>org.example.udf.Function.combineStrings</handler>
+                  <args>
+                      <arg>
+                          <name>a</name>
+                          <type>string</type>
+                      </arg>
+                      <arg>
+                          <name>b</name>
+                          <type>string</type>
+                      </arg>
+                  </args>
+                  <returns>string</returns>
+              </function>
+          </functions>
+          <procedures>
+              <procedure>
+                  <name>hello_world_proc</name>
+                  <handler>org.example.procedure.App.run</handler>
+                  <args></args>
+                  <returns>TABLE(hello_world string)</returns>
+              </procedure>
+          </procedures>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
