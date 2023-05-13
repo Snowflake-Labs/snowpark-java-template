@@ -39,15 +39,13 @@
         <version>0.1.0</version>
         <configuration>
           <auth>
-              <url>https://pm.snowflakecomputing.com:443</url>
-              <user>jasonfreeberg</user>
-              <password>${env.SNOWFLAKE_PASSWORD}</password> <!-- Env var injection for secrets -->
-              <!-- optional auth configuration -->  
-              <role>accountadmin</role>
-              <db>jasonfreeberg</db>
-              <schema>public</schema>
+              <url>https://${env.SNOWSQL_ACCOUNT}.snowflakecomputing.com:443</url>
+              <user>${env.SNOWSQL_USER}</user>
+              <password>${env.SNOWSQL_PWD}</password>
+              <db>${env.SNOWSQL_DATABASE}</db>
+              <schema>${env.SNOWSQL_SCHEMA}</schema>
           </auth>
-          <stage>STAGE_NAME</stage>
+          <stage>freeberg_maven_demo</stage>
           <functions>
               <function>
                   <name>combineStrings</name>
