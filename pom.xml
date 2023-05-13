@@ -45,7 +45,7 @@
               <db>${env.SNOWSQL_DATABASE}</db>
               <schema>${env.SNOWSQL_SCHEMA}</schema>
           </auth>
-          <stage>freeberg_maven_demo</stage>
+          <stage>public</stage>
           <functions>
               <function>
                   <name>combineStrings</name>

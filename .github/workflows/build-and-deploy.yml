@@ -14,6 +14,7 @@ env:
   SNOWSQL_PWD: ${{ secrets.SNOWSQL_PWD }}
   SNOWSQL_DATABASE: ${{ secrets.SNOWSQL_DATABASE }}
   SNOWSQL_SCHEMA: ${{ secrets.SNOWSQL_SCHEMA }}
+  SNOWSQL_WAREHOUSE: ${{ secrets.SNOWSQL_WAREHOUSE }}
 
 jobs:
   build-and-deploy:
