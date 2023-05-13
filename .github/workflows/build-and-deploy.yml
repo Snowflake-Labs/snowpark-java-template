@@ -33,7 +33,7 @@ jobs:
         run: mvn package --no-transfer-progress
 
       - name: Deploy
-        run: mvn snowflake:deploy
+        run: mvn snowflake:deploy --no-transfer-progress
 
       - name: Upload artifact for future reference
         uses: actions/upload-artifact@v2
