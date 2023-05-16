@@ -17,7 +17,7 @@ public class AppTest {
     Session session;
 
     @Before
-    public void intialize() {
+    public void initialize() {
         this.session = LocalSession.getSession();
     }
 
