@@ -12,7 +12,7 @@ public class App {
      * A simple stored procedure which creates a 2x2 DataFrame, prints it
      * to the console, and returns the row count.
      * @param session A Snowflake Session
-     * @return The count of the DataFrame
+     * @return The "hello world" DataFrame
      */
     public static DataFrame run(Session session) {
 
