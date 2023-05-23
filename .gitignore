@@ -28,6 +28,5 @@ build/
 
 # IDEs
 .idea/
-.vscode/
 
 .gradle/

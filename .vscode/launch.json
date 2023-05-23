@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Java Program",
+            "request": "launch",
+            "mainClass": "org.example.procedure.App",
+            "projectName": "snowpark-java-template"
+        }
+    ]
+}
